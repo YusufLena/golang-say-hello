@@ -1,8 +1,6 @@
 package golangsayhello
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func endApp(){
 	fmt.Println("menutup apk")
@@ -13,14 +11,14 @@ func SayHello(name string) string {
 	return "Hello" + name
 }
 
-func Iterasi(name string) string {
+func Iterasi(name string) {
 	defer endApp()
 	if name != "" {
 		for i := 0; i < len(name); i++ {
-			return "Welcome" + name
+			fmt.Println("Welcome", name)
+			break
 		}
 	} else{
 		fmt.Println("Name not found")
 	}
-	return name
 }
