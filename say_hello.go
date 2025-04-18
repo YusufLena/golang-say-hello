@@ -2,8 +2,6 @@ package golangsayhello
 
 import (
 	"fmt"
-
-	"golang.org/x/tools/go/analysis/passes/nilfunc"
 )
 
 func endApp(){
