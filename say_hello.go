@@ -1,6 +1,10 @@
 package golangsayhello
 
-import "fmt"
+import (
+	"fmt"
+
+	"golang.org/x/tools/go/analysis/passes/nilfunc"
+)
 
 func endApp(){
 	fmt.Println("menutup apk")
@@ -11,14 +15,14 @@ func SayHello(name string) string {
 	return "Hello" + name
 }
 
-func Iterasi(name string) {
+func Iterasi(name string) string {
 	defer endApp()
 	if name != "" {
 		for i := 0; i < len(name); i++ {
-			fmt.Println("Welcome", name)
-			break
+			return "Welcome" + name
 		}
 	} else{
 		fmt.Println("Name not found")
 	}
+	return name
 }
