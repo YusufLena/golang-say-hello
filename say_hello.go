@@ -4,10 +4,11 @@ import "fmt"
 
 type Age func(int) int
 type Name func(string) string
-func Hello(name string, filterName Name, age int, filterAge Age){
+func hello(name string, age int, filterName Name,  filterAge Age){
 	nama := filterName(name)
 	umur := filterAge(age)
-	fmt.Println("Welcome and hello Mr", nama, "Umur anda", filterAge, ".", umur)
+	filterage := filterAge(age)
+	fmt.Println("Welcome and hello Mr", nama, "Umur anda", filterage, ".", umur)
 }
 
 func NameFilter(name string) string {
@@ -22,13 +23,26 @@ func NameFilter(name string) string {
 	}
 }
 
-func AgeCheked(umur int) string {
-	if umur < 18 {
+func Umur(age int) int {
+	if age < 18 {
+		for i := 1; i <= 5; i++ {
+			fmt.Println(i)
+		}
+	}
+	return(age)
+}
+
+func AgeCheked(age int) string {
+	if age < 18 {
 		return "Umur anda Belum cukup Mr" 
-	} else if umur == 18 {
+	} else if age == 18 {
 		return "Oke umur anda pas sekali"
 	} else {
 		return "umur anda sudah sangat pas"
 	}
 }
 
+func SayHello(){
+	filter1, filter2 := NameFilter, Umur
+	hello("", 0, filter1, filter2)
+}
