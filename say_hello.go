@@ -2,9 +2,9 @@ package golangsayhello
 
 func nameFilter(name string) string {
 	if name == "Anjing"{
-		return "Nama yang anda buat sangat tidak merupakan hewan"
+		return "Nama yang anda buat merupakan hewan"
 	} else if name == "Babi" {
-		return "Nama yang anda buat sangat tidak merupakan hewan"
+		return "Nama yang anda buat merupakan hewan"
 	} else if name == "Goblok" {
 		return "Nama mengandung kata kasar"
 	} else {
@@ -22,8 +22,8 @@ func ageCheked(age int) string {
 	}
 }
 
-func SayHello(name string, age int)(string, string, string){
+func SayHello(name string, age int)(string, string){
 	filter1 := nameFilter(name)
 	filter2 := ageCheked(age)
-	return filter1,"\n",filter2 + name
+	return filter1, filter2 + name
 }
