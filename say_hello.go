@@ -22,8 +22,8 @@ func ageCheked(age int) string {
 	}
 }
 
-func SayHello(name string, age int)(string, string){
+func SayHello(name string, age int)(string,string,string,string,string){
 	filter1 := nameFilter(name)
 	filter2 := ageCheked(age)
-	return filter1, filter2 + name
+	return "Welcome",name, "\n", filter1, filter2 + name
 }
